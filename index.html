@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portafolio — Arthur Sebastian Curasma Vidal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ==============================
+     CANVAS BACKGROUND ANIMADO
+     ============================== -->
+<canvas id="bg-canvas"></canvas>
+
+<div class="wrapper">
+
+  <!-- ==============================
+       TOPBAR: LOGO UPLA + BADGE AÑO
+       ============================== -->
+  <nav class="topbar">
+    <a class="topbar-logo" href="#" title="Universidad Peruana Los Andes">
+      <img
+        src="img/logo-upla.png"
+        alt="Logo UPLA"
+        onerror="this.style.display='none'; this.nextElementSibling.textContent='UPLA';"
+      />
+      <span class="inst-label">Universidad Peruana Los Andes</span>
+    </a>
+    <div class="badge-year">2026</div>
+  </nav>
+
+  <!-- ==============================
+       HERO SECTION
+       ============================== -->
+  <section class="hero">
+    <div class="hero-name-row">
+      <h1 class="hero-name">Arthur Sebastian Curasma Vidal</h1>
+      <img
+        class="profile-avatar"
+        src="img/perfil.jpg"
+        alt="Foto de perfil de Arthur Sebastian Curasma Vidal"
+        onerror="this.style.display='none';"
+      />
+    </div>
+
+    <p class="hero-subtitle">
+      Estudiante de <span>Ingeniería de Sistemas y Computación</span> — IV Ciclo
+    </p>
+
+    <p class="hero-desc">
+      Aquí subo y organizo mis tareas de Taller de Aplicaciones 1,
+      unidad por unidad y semana por semana, en el mismo orden en que las
+      vimos en clase.
+    </p>
+
+    <!-- Estadísticas -->
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-value">1</div>
+        <div class="stat-label">Curso</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">4</div>
+        <div class="stat-label">Unidades por curso</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       ACORDEÓN DE UNIDADES
+       ============================== -->
+  <div class="accordion-wrap" id="accordion">
+
+    <!-- ── UNIDAD 1 ── -->
+    <div class="accordion-item" id="unit-1">
+      <button class="accordion-trigger" data-target="unit-1" type="button" aria-expanded="false">
+        <span class="unit-badge u1">U1</span>
+        <div class="accordion-header-text">
+          <div class="unit-title">Unidad 1</div>
+          <div class="unit-meta">Semanas 1 – 4 · Taller de Aplicaciones 1</div>
+        </div>
+        <span class="pending-count">3 pendientes</span>
+        <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+      <div class="accordion-body">
+        <div class="accordion-inner">
+          <div class="weeks-grid">
+            <!-- Semana 1: entregada, con 4 trabajos -->
+            <div class="week-card done">
+              <div class="week-head">
+                <div>
+                  <div class="week-label">Semana 1</div>
+                  <div class="week-title">4 trabajos entregados</div>
+                </div>
+                <span class="tag done-tag">Entregado</span>
+              </div>
+
+              <ul class="file-list">
+                <li class="file-row">
+                  <span class="file-icon">PNG</span>
+                  <div class="file-info">
+                    <div class="file-name">Figma 1: Diseñar una aplicación web para hallar la hipotenusa de un triángulo rectángulo</div>
+                    <div class="file-meta">figma1.png</div>
+                  </div>
+                  <div class="file-actions">
+                    <a class="btn btn-view" href="trabajos/semana1/figma1.png" target="_blank" rel="noopener">Ver</a>
+                    <a class="btn btn-download" href="trabajos/semana1/figma1.png" download="figma1.png">Descargar</a>
+                    <a class="btn btn-link" href="https://www.figma.com/design/ReJ0SdoG45deJ5dI7iJHLt/Sin-t%C3%ADtulo?node-id=0-1&amp;t=N2ZxdrCOb2gYMT5R-1" target="_blank" rel="noopener noreferrer">Enlace ↗</a>
+                  </div>
+                </li>
+
+                <li class="file-row">
+                  <span class="file-icon">PNG</span>
+                  <div class="file-info">
+                    <div class="file-name">Figma 2: Diseñar una aplicación web que visualice una ventana login</div>
+                    <div class="file-meta">figma2.png</div>
+                  </div>
+                  <div class="file-actions">
+                    <a class="btn btn-view" href="trabajos/semana1/figma2.png" target="_blank" rel="noopener">Ver</a>
+                    <a class="btn btn-download" href="trabajos/semana1/figma2.png" download="figma2.png">Descargar</a>
+                    <a class="btn btn-link" href="https://www.figma.com/make/iLaZNcNL6xhZqDCrNasF4v/Inicio-de-sesi%25C3%25B3n-universidad?p=f&amp;t=tjlpMcNiH6Eqz0Zt-0" target="_blank" rel="noopener noreferrer">Enlace ↗</a>
+                  </div>
+                </li>
+
+                <li class="file-row">
+                  <span class="file-icon">PNG</span>
+                  <div class="file-info">
+                    <div class="file-name">Figma 3: Diseñar aplicación web de un inicio de sesión de una banca</div>
+                    <div class="file-meta">figma3.png</div>
+                  </div>
+                  <div class="file-actions">
+                    <a class="btn btn-view" href="trabajos/semana1/figma3.png" target="_blank" rel="noopener">Ver</a>
+                    <a class="btn btn-download" href="trabajos/semana1/figma3.png" download="figma3.png">Descargar</a>
+                    <a class="btn btn-link" href="https://www.figma.com/make/WnqJO7tbuokKN3c9tlv6ht/Inicio-de-sesi%C3%B3n-banca-en-l%C3%ADnea?t=ndlkzj3ZAtRXzGam-1" target="_blank" rel="noopener noreferrer">Enlace ↗</a>
+                  </div>
+                </li>
+
+                <li class="file-row">
+                  <span class="file-icon">PNG</span>
+                  <div class="file-info">
+                    <div class="file-name">Figma 4: Diseñar aplicación web área y perímetro de un rectángulo</div>
+                    <div class="file-meta">figma4.png</div>
+                  </div>
+                  <div class="file-actions">
+                    <a class="btn btn-view" href="trabajos/semana1/figma4.png" target="_blank" rel="noopener">Ver</a>
+                    <a class="btn btn-download" href="trabajos/semana1/figma4.png" download="figma4.png">Descargar</a>
+                    <a class="btn btn-link" href="https://www.figma.com/make/ezpO9jEvST9J3xnUzb9Y7P/Calculadora-de-%C3%A1rea-de-rect%C3%A1ngulo?t=EJ1HvzZ49eUUT1tm-1" target="_blank" rel="noopener noreferrer">Enlace ↗</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="week-card pending">
+              <div class="week-label">Semana 2</div>
+              <div class="week-title">Sin archivos aún</div>
+              <span class="tag pending-tag">Pendiente</span>
+            </div>
+            <div class="week-card pending">
+              <div class="week-label">Semana 3</div>
+              <div class="week-title">Sin archivos aún</div>
+              <span class="tag pending-tag">Pendiente</span>
+            </div>
+            <div class="week-card pending">
+              <div class="week-label">Semana 4</div>
+              <div class="week-title">Sin archivos aún</div>
+              <span class="tag pending-tag">Pendiente</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── UNIDAD 2 ── -->
+    <div class="accordion-item" id="unit-2">
+      <button class="accordion-trigger" data-target="unit-2" type="button" aria-expanded="false">
+        <span class="unit-badge u2">U2</span>
+        <div class="accordion-header-text">
+          <div class="unit-title">Unidad 2</div>
+          <div class="unit-meta">Semanas 5 – 8 · Taller de Aplicaciones 1</div>
+        </div>
+        <span class="pending-count">4 pendientes</span>
+        <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+      <div class="accordion-body">
+        <div class="accordion-inner">
+          <div class="weeks-grid">
+            <div class="week-card pending">
+              <div class="week-label">Semana 5</div>
+              <div class="week-title">Sin archivos aún</div>
+              <span class="tag pending-tag">Pendiente</span>
+            </div>
+            <div class="week-card pending">
+              <div class="week-label">Semana 6</div>
+              <div class="week-title">Sin archivos aún</div>
+              <span class="tag pending-tag">Pendiente</span>
+            </div>
+            <div class="week-card pending">
+              <div class="week-label">Semana 7</div>
+              <div class="week-title">Sin archivos aún</div>
+              <span class="tag pending-tag">Pendiente</span>
+            </div>
+            <div class="week-card pending">
+              <div class="week-label">Semana 8</div>
+              <div class="week-title">Sin archivos aún</div>
+              <span class="tag pending-tag">Pendiente</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── UNIDAD 3 ── -->
+    <div class="accordion-item" id="unit-3">
+      <button class="accordion-trigger" data-target="unit-3" type="button" aria-expanded="false">
+        <span class="unit-badge u3">U3</span>
+        <div class="accordion-header-text">
+          <div class="unit-title">Unidad 3</div>
+          <div class="unit-meta">Semanas 9 – 12 · Taller de Aplicaciones 1</div>
+        </div>
+        <span class="pending-count">4 pendientes</span>
+        <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+      <div class="accordion-body">
+        <div class="accordion-inner">
+          <div class="weeks-grid">
+            <div class="week-card pending">
+              <div class="week-label">Semana 9</div>
+              <div class="week-title">Sin archivos aún</div>
+              <span class="tag pending-tag">Pendiente</span>
+            </div>
+            <div class="week-card pending">
+              <div class="week-label">Semana 10</div>
+              <div class="week-title">Sin archivos aún</div>
+              <span class="tag pending-tag">Pendiente</span>
+            </div>
+            <div class="week-card pending">
+              <div class="week-label">Semana 11</div>
+              <div class="week-title">Sin archivos aún</div>
+              <span class="tag pending-tag">Pendiente</span>
+            </div>
+            <div class="week-card pending">
+              <div class="week-label">Semana 12</div>
+              <div class="week-title">Sin archivos aún</div>
+              <span class="tag pending-tag">Pendiente</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── UNIDAD 4 ── -->
+    <div class="accordion-item" id="unit-4">
+      <button class="accordion-trigger" data-target="unit-4" type="button" aria-expanded="false">
+        <span class="unit-badge u4">U4</span>
+        <div class="accordion-header-text">
+          <div class="unit-title">Unidad 4</div>
+          <div class="unit-meta">Semanas 13 – 16 · Taller de Aplicaciones 1</div>
+        </div>
+        <span class="pending-count">4 pendientes</span>
+        <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+      <div class="accordion-body">
+        <div class="accordion-inner">
+          <div class="weeks-grid">
+            <div class="week-card pending">
+              <div class="week-label">Semana 13</div>
+              <div class="week-title">Sin archivos aún</div>
+              <span class="tag pending-tag">Pendiente</span>
+            </div>
+            <div class="week-card pending">
+              <div class="week-label">Semana 14</div>
+              <div class="week-title">Sin archivos aún</div>
+              <span class="tag pending-tag">Pendiente</span>
+            </div>
+            <div class="week-card pending">
+              <div class="week-label">Semana 15</div>
+              <div class="week-title">Sin archivos aún</div>
+              <span class="tag pending-tag">Pendiente</span>
+            </div>
+            <div class="week-card pending">
+              <div class="week-label">Semana 16</div>
+              <div class="week-title">Sin archivos aún</div>
+              <span class="tag pending-tag">Pendiente</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /.accordion-wrap -->
+
+  <!-- ==============================
+       SECCIÓN TRABAJOS PENDIENTES
+       ============================== -->
+  <section class="pending-section">
+    <div class="section-title">⏳ Trabajos Pendientes</div>
+
+    <div class="pending-grid">
+
+      <!-- Unidad 1 -->
+      <div class="pending-card">
+        <div class="pc-unit">Unidad 1</div>
+        <div class="pc-week">Semana 2</div>
+        <span class="pc-tag">Pendiente</span>
+      </div>
+      <div class="pending-card">
+        <div class="pc-unit">Unidad 1</div>
+        <div class="pc-week">Semana 3</div>
+        <span class="pc-tag">Pendiente</span>
+      </div>
+      <div class="pending-card">
+        <div class="pc-unit">Unidad 1</div>
+        <div class="pc-week">Semana 4</div>
+        <span class="pc-tag">Pendiente</span>
+      </div>
+
+      <!-- Unidad 2 -->
+      <div class="pending-card">
+        <div class="pc-unit">Unidad 2</div>
+        <div class="pc-week">Semana 5</div>
+        <span class="pc-tag">Pendiente</span>
+      </div>
+      <div class="pending-card">
+        <div class="pc-unit">Unidad 2</div>
+        <div class="pc-week">Semana 6</div>
+        <span class="pc-tag">Pendiente</span>
+      </div>
+      <div class="pending-card">
+        <div class="pc-unit">Unidad 2</div>
+        <div class="pc-week">Semana 7</div>
+        <span class="pc-tag">Pendiente</span>
+      </div>
+      <div class="pending-card">
+        <div class="pc-unit">Unidad 2</div>
+        <div class="pc-week">Semana 8</div>
+        <span class="pc-tag">Pendiente</span>
+      </div>
+
+      <!-- Unidad 3 -->
+      <div class="pending-card">
+        <div class="pc-unit">Unidad 3</div>
+        <div class="pc-week">Semana 9</div>
+        <span class="pc-tag">Pendiente</span>
+      </div>
+      <div class="pending-card">
+        <div class="pc-unit">Unidad 3</div>
+        <div class="pc-week">Semana 10</div>
+        <span class="pc-tag">Pendiente</span>
+      </div>
+      <div class="pending-card">
+        <div class="pc-unit">Unidad 3</div>
+        <div class="pc-week">Semana 11</div>
+        <span class="pc-tag">Pendiente</span>
+      </div>
+      <div class="pending-card">
+        <div class="pc-unit">Unidad 3</div>
+        <div class="pc-week">Semana 12</div>
+        <span class="pc-tag">Pendiente</span>
+      </div>
+
+      <!-- Unidad 4 -->
+      <div class="pending-card">
+        <div class="pc-unit">Unidad 4</div>
+        <div class="pc-week">Semana 13</div>
+        <span class="pc-tag">Pendiente</span>
+      </div>
+      <div class="pending-card">
+        <div class="pc-unit">Unidad 4</div>
+        <div class="pc-week">Semana 14</div>
+        <span class="pc-tag">Pendiente</span>
+      </div>
+      <div class="pending-card">
+        <div class="pc-unit">Unidad 4</div>
+        <div class="pc-week">Semana 15</div>
+        <span class="pc-tag">Pendiente</span>
+      </div>
+      <div class="pending-card">
+        <div class="pc-unit">Unidad 4</div>
+        <div class="pc-week">Semana 16</div>
+        <span class="pc-tag">Pendiente</span>
+      </div>
+
+    </div><!-- /.pending-grid -->
+  </section>
+
+  <!-- ==============================
+       FOOTER
+       ============================== -->
+  <footer class="footer">
+    <p>
+      Portafolio académico de <span>Arthur Sebastian Curasma Vidal</span> ·
+      Taller de Aplicaciones 1 · <span>2026</span>
+    </p>
+    <p style="margin-top:6px;">Universidad Peruana Los Andes — Ingeniería de Sistemas y Computación</p>
+  </footer>
+
+</div><!-- /.wrapper -->
+
+
+<!-- ==============================
+     JAVASCRIPT
+     ============================== -->
+<script src="script.js"></script>
+</body>
+</html>
