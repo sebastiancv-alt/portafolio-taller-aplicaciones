@@ -129,28 +129,3 @@
       }
     });
   })();
-document.addEventListener('click', function (e) {
-  const downloadBtn = e.target.closest('a[download]');
-  if (!downloadBtn) return;
-
-  e.preventDefault();
-  const fileUrl = downloadBtn.getAttribute('href');
-  const fileName = downloadBtn.getAttribute('download') || 'archivo';
-
-  fetch(fileUrl)
-    .then(response => response.blob())
-    .then(blob => {
-      const blobUrl = window.URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.style.display = 'none';
-      a.href = blobUrl;
-      a.download = fileName;
-      document.body.appendChild(a);
-      a.click();
-      window.URL.revokeObjectURL(blobUrl);
-      a.remove();
-    })
-    .catch(() => {
-      window.location.href = fileUrl;
-    });
-});
