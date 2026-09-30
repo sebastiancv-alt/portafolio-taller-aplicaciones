@@ -138,7 +138,7 @@
     if (!downloadBtn) return;
 
     const url = downloadBtn.getAttribute('href');
-    const filename = downloadBtn.getAttribute('download') || 'archivo.png';
+    const filename = downloadBtn.getAttribute('download') || 'archivo';
 
     if (url && !url.startsWith('#') && !url.startsWith('javascript:')) {
       e.preventDefault();
@@ -162,8 +162,15 @@
           document.body.removeChild(tempLink);
         })
         .catch(err => {
-          console.error('Error al descargar:', err);
-          alert(`⚠️ No se pudo descargar la imagen.\n\nVerifica que:\n1. Exista la ruta "${url}" en tu proyecto.\n2. Estás ejecutando la página con un servidor local (como Live Server en VS Code).`);
+          /* Fallback: descarga nativa (funciona también al abrir con file://) */
+          console.warn('Fetch falló, usando descarga nativa:', err);
+          const a = document.createElement('a');
+          a.style.display = 'none';
+          a.href = url;
+          a.download = filename;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
         });
     }
   });
