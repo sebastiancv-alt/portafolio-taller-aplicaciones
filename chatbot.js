@@ -56,6 +56,18 @@
       texto: 'Actividades 1 y 2 de la semana 3: determinar el importe a pagar, el importe de la compra, el descuento y los obsequios (lapiceros y caramelos), más dos proyectos comprimidos: la tienda (Act1) y el viaje (Act2).'
     },
     {
+      titulo: 'Prototipos en Figma de sistemas de gestión',
+      semanas: [9],
+      claves: ['figma', 'prototipo', 'figma make', 'sistema', 'inventario', 'control de inventario', 'academica', 'gestion academica', 'ventas', 'carrito', 'reservas', 'citas', 'unidad 2'],
+      texto: 'Cuatro diseños en Figma de sistemas web: Sistema de Control de Inventario, Sistema de Gestión Académica, Sistema de Ventas con Carrito y Sistema de Reservas y Citas (los dos primeros en Figma Make y los dos últimos como prototipos).'
+    },
+    {
+      titulo: 'Node.js y npm',
+      semanas: [9],
+      claves: ['node', 'nodejs', 'npm', 'javascript', 'manual', 'word', 'docx', 'paquetes'],
+      texto: 'Manual en Word sobre Node.js y npm (el gestor de paquetes de Node).'
+    },
+    {
       titulo: 'Instalación de SQL Server y Microsoft Azure',
       semanas: [5],
       claves: ['sql server', 'sqlserver', 'azure', 'microsoft', 'instalacion', 'instalar', 'manual', 'nube', 'gestor'],
@@ -198,7 +210,7 @@
 
   function respAyuda() {
     return {
-      texto: 'Puedo ayudarte con cosas como:\n• Qué trabajos hay en una semana o unidad («semana 5»)\n• Qué falta por entregar y cuál es el avance\n• Cuántos archivos hay y de qué tipo (PDF, PNG, SQL, ZIP, Figma)\n• De qué trata cada tema (Maven, modelos de base de datos, login…)\n• Darte el enlace para ver o descargar un archivo\n\nPrueba con una de las sugerencias de abajo o escribe tu propia pregunta.'
+      texto: 'Puedo ayudarte con cosas como:\n• Qué trabajos hay en una semana o unidad («semana 5»)\n• Qué falta por entregar y cuál es el avance\n• Cuántos archivos hay y de qué tipo (PDF, PNG, SQL, ZIP, Word, Figma)\n• De qué trata cada tema (Maven, modelos de base de datos, login…)\n• Darte el enlace para ver o descargar un archivo\n\nPrueba con una de las sugerencias de abajo o escribe tu propia pregunta.'
     };
   }
 
@@ -209,12 +221,12 @@
 
   function respEstructura(D) {
     const lineas = D.unidades.map(u => `• **${u.titulo}**: ${u.meta.replace(' · Taller de Aplicaciones 1', '')}`);
-    return { texto: `El curso (Taller de Aplicaciones 1) tiene **${D.unidades.length} unidades** y **${D.semanas.length} semanas** en total.\n${lineas.join('\n')}` };
+    return { texto: `El curso (Taller de Aplicaciones 1) tiene **${D.unidades.length} unidades**. Semanas en el portafolio: **${rangos(D.semanas.map(x => x.num))}**.\n${lineas.join('\n')}` };
   }
 
   function respSemana(D, n) {
     const s = D.semanas.find(x => x.num === n);
-    if (!s) return { texto: `La semana ${n} no existe en el portafolio. El curso tiene las semanas 1 a ${D.semanas.length}.` };
+    if (!s) return { texto: `La semana ${n} no está en este portafolio. Las semanas publicadas son: ${rangos(D.semanas.map(x => x.num))}.` };
     if (!s.entregada) return { texto: `**Semana ${n}** (Unidad ${s.unidad}): todavía no tiene archivos, está **pendiente**.` };
     const tem = temasDe(D, n);
     let t = `**Semana ${n}** (Unidad ${s.unidad}) · entregada con **${plural(s.archivos.length, 'trabajo', 'trabajos')}**.`;
@@ -350,10 +362,11 @@
     if (t('\\b(avance|progreso|porcentaje|cuanto llevo|va el curso)\\b')) return respAvance(D);
 
     const tipos = [
-      ['PDF', /\bpdf\b|\bdocumentos?\b|\binformes?\b|\bmanuales\b/, a => a.tipo === 'PDF'],
+      ['PDF', /\bpdf\b|\binformes?\b/, a => a.tipo === 'PDF'],
       ['PNG (imágenes)', /\bpng\b|\bimagen(es)?\b|\bcapturas?\b|\bfotos?\b/, a => a.tipo === 'PNG'],
       ['SQL', /\bsql\b|\bscripts?\b/, a => a.tipo === 'SQL'],
       ['ZIP', /\bzip\b|\bcomprimidos?\b/, a => a.tipo === 'ZIP'],
+      ['Word', /\bword\b|\bdocx\b/, a => a.tipo === 'DOC'],
       ['de Figma', /\bfigma\b|\benlaces?\b|\blinks?\b/, a => a.tipo === 'FIG' || /figma\.com/.test(a.enlace)]
     ];
     const pideTipo = tipos.find(x => x[1].test(q));
